@@ -14,6 +14,13 @@ $(".decor").click(function(){
 $(".modal .close").click(function () {
 	$(".modal .item *:not(.close)").remove();
 	$(".modal").removeClass("show video");
+	console.log("click!");
+});
+
+$(".modal ").on("click", ".decor", function () {
+	$(".modal .item *:not(.close)").remove();
+	$(".modal").removeClass("show video");
+	console.log("click!");
 });
 
 function youtube_id(url){

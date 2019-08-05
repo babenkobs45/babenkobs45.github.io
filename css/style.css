@@ -75,7 +75,6 @@ header nav{
 
 .hero-block {
 	height: 100vh;
-	min-height: 1100px;
 	width: 100%;
 	display: flex;
     align-items: center;
@@ -196,6 +195,7 @@ img.bg {
 	-moz-box-shadow: 0px 3px 1px 0px #932600;
 	box-shadow: 0px 3px 1px 0px #932600;
 	cursor: pointer;
+	transition: 0.3s;
 }
 
 .form .accept{
@@ -208,7 +208,12 @@ img.bg {
 	margin-top: 46px;
     display: inline-block;
     width: auto;
-    padding: 20px 16px;
+	padding: 20px 23px;
+	transition: 0.3s;
+}
+.form [type="button"]:hover:hover, .button:hover{
+	transition: 0.3s;
+	background-color: #B93608;
 }
 
 .hero-block .arrow {
@@ -246,6 +251,11 @@ img.bg {
 .first-promo .title-white{
 	text-align: right;
 	text-shadow: 0px 5px 0px #69697B;
+	line-height: 1.3;
+}
+
+.first-promo .button{
+	margin-top: 34px;
 }
 
 .second-promo{
@@ -361,6 +371,7 @@ img.bg {
 	font-size: 17px;
 	padding-bottom: 16px;
 	position: relative;
+	text-align: left;
 }
 
 .organizers .info li::before,
@@ -407,7 +418,8 @@ img.bg {
 	margin-top: 9px;
 }
 
-.organizers .button{	
+.organizers .button{
+	transition: 0.3s;	
     z-index: 1;
     margin: 0 0 98px;
 }
@@ -429,6 +441,7 @@ img.bg {
 
 .franklin-block .button{
 	margin-top: 89px;
+	transition: 0.3s;
 }
 
 .franklin {
@@ -509,6 +522,15 @@ img.bg {
 	transition: .3s;
 }
 
+.modal .decor{
+	pointer-events: none;
+}
+
+.modal .decor::after{
+	pointer-events: all;
+	transform: rotate(45deg);
+}
+
 .speakers .decor:hover::after{
 	box-shadow: 0px 0px 0px 20px rgba(255, 255, 255, 0.64);
     background-color: #E8AE50;
@@ -570,14 +592,21 @@ img.bg {
 }
 
 .speakers-invitation .play-button::before{
-    content: url(/img/play-white-triangle.svg);
+	content: "";
     position: absolute;
-    left: calc(50% - 43px);
-    top: calc(50% - 43px);
-    border: 2px solid #fff;
-    padding: 32px 35px;
-    border-radius: 50%;
-    cursor: pointer;
+    display: block;
+    width: 80px;
+    height: 80px;
+    background: url(/img/play.svg) no-repeat center center;
+    background-size: auto 100%;
+    left: calc(50% - 40px);
+    top: calc(50% - 40px);
+	cursor: pointer;
+	transition: .3s;
+}
+
+.speakers-invitation .play-button:hover::before{
+	transform: scale(1.1);
 }
 
 .speakers-invitation .play-button{
@@ -728,6 +757,7 @@ img.bg {
 .list .description{
 	width: 237px;
 	font-size: 20px;
+	line-height: 1.2;
 }
 
 .list img{
@@ -802,17 +832,21 @@ ul.extended li{
 }
 
 .modal.video{
-	align-items: center;
+	/* align-items: center; */
 }
 
 .modal.video .item{
-	width: 640px;
-	padding: 30px 0 56.25%;
+	width: 800px;
+    height: 600px;
+    max-width: 80% !important;
+    max-height: 80% !important;
 	position: relative;
-    /* padding-bottom: 56.25%;
-    padding-top: 30px; */
-    height: 0;
-    overflow: hidden;
+	padding-left: 0;
+	padding-right: 0;
+    /* padding-bottom: 56.25%; */
+    padding-top: 30px;
+    /* height: 0; */
+    /* overflow: hidden; */
 }
 
 .modal.video iframe{
@@ -956,14 +990,14 @@ footer .personal{
 	.first-promo .title-white{
 		position: relative;
     	bottom: -301px;
-
 	}
 	.first-promo .title-white{
 		font-size: 28px;
 		position: relative;
 		top: 33px;
-		text-shadow: none;
 		z-index: 2;
+		line-height: 1.2;
+		text-shadow: 0px 3px 0px #69697B;
 	}
 	.first-promo::before{
 		content: "";
@@ -1157,16 +1191,6 @@ footer .personal{
 		font-size: 13px;
 		margin-top: 15px;
 	}
-	.speakers-invitation .play-button::before {
-		content: url(/img/play-white-triangle.svg);
-		position: absolute;
-		left: calc(35.2%);
-		top: calc(21.5%);
-		border: 2px solid #fff;
-		padding: 8.2% 9.8%;
-		border-radius: 50%;
-		cursor: pointer;
-	}
 	.partner .container{
 		flex-direction: column-reverse;
 	}
@@ -1306,6 +1330,17 @@ footer .personal{
 	.modal .item .close{
 		top: -30px;
 		right: 0;
+	}
+	footer .container{
+		flex-direction: column;
+		justify-content: space-around;
+	}
+	footer .personal, footer{
+		text-align: center;
+	}
+	footer{
+		padding: 20px 5px;
+		height: 200px;
 	}
 }
 
