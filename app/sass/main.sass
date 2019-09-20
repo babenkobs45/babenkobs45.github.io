@@ -1,0 +1,707 @@
+@import vars
+@import fonts
+@import libs
+@import media
+
+
+::placeholder
+	color: #666
+
+::selection
+	background-color: $accent
+	color: #fff
+
+input, textarea
+	outline: none
+	&:focus:required:invalid
+		border-color: red
+	&:required:valid
+		border-color: green
+
+body
+	font-size: 16px
+	min-width: 320px
+	position: relative
+	line-height: 1.65
+	font-family: 'Open Sans', sans-serif
+	overflow-x: hidden
+	color: $text
+	& > div
+		position: relative
+
+.bg
+	position: absolute
+	width: 100%
+	height: 100%
+	object-fit: cover
+	top: 0
+
+.color-accent, a, a:hover
+	color: $accent
+	text-decoration: none
+
+
+.block-title
+	font-family: 'Rotis Semi Serif W1G'
+	font-size: 30px
+	font-weight: 600
+	line-height: 40px
+	letter-spacing: 0.6px
+	text-align: center
+	text-transform: uppercase
+	margin: 0 auto 53px
+	position: relative
+	@include respond-to(ipad)
+		font-size: 25px
+	
+.button
+	font-size: 22px
+	font-family: 'Rotis Semi Serif W1G'
+	text-transform: uppercase
+	margin: 26px auto 0
+	line-height: 50px
+	display: block
+	width: 276px
+	border: 10px solid rgba(255, 255, 255, 0.25)
+	position: relative
+	transition: .3s
+	@include respond-to(ipad)
+		margin: 26px auto
+		max-width: 280px
+		display: block
+	&:hover
+		text-decoration: none
+		color: #ffffff
+		border: 10px solid rgba(255, 255, 255, 0.45)
+		transition: .3s
+	div
+		padding: 10px 35px 4px
+		background-color: $accent
+		color: #ffffff
+
+.first-screen
+	height: 100vh
+	font-weight: 600
+	font-size: 13px
+	display: flex
+	align-items: center
+	@include respond-to(ipad)
+		display: block
+	.button
+		margin-left: -10px
+		display: inline-block
+		width: auto
+		@include respond-to(ipad)
+			margin-left: auto
+	.info
+		position: absolute
+		width: 100%
+		top: 0
+		@include respond-to(ipad)
+			position: relative
+			margin-bottom: 50px
+		.col-6
+			background-color: #fff
+			.item
+				line-height: 20px
+				padding: 14px 40px 17px
+				@include respond-to(ipad)
+					padding: 15px 3px 15px 10px
+				&::after
+					content: ""
+					height: 32px
+					position: absolute
+					right: 0
+					border-right: 1px dashed #C6C6C6
+					top: calc((100% - 32px) / 2)
+			&:last-child
+				.item
+					&::after
+						content: none
+.hero-text
+	font-family: 'Rotis Semi Serif W1G'
+	font-weight: 700
+	font-size: 28px
+	text-transform: uppercase
+	width: 100%
+	.main-text
+		max-width: 670px
+		margin-top: 7px
+		color: $accent
+		font-size: 101px
+		letter-spacing: 1.01px
+		line-height: 110px
+		position: relative
+		padding-bottom: 19px
+		margin-bottom: 25px
+		@include respond-to(ipad)
+			font-size: 50px
+			line-height: 69px
+			padding-bottom: 11px
+		&::after
+			content: ""
+			position: absolute
+			background-color: $accent
+			height: 4px
+			width: 35%
+			bottom: 0
+			left: 0
+		.small
+			font-size: 42px
+			letter-spacing: 3.78px
+			line-height: 45px
+			color: #313131
+			width: 54%
+			bottom: -13px
+			right: 6%
+			float: right
+			position: relative
+			@include respond-to(ipad)
+				font-size: 22px
+				letter-spacing: 1.78px
+				line-height: 28px
+				bottom: -11px
+	.description
+		font-size: 26px
+		letter-spacing: .52px
+	.col-xl-7
+		display: flex
+		flex-direction: column
+
+.video-message
+	font-family: 'Rotis Semi Serif W1G'
+	font-weight: 600
+	background-color: #F8F6F5
+	text-transform: uppercase
+	padding-bottom: 92px
+	cursor: pointer
+	.col-md-2
+		z-index: 2
+	.col-md-8
+		z-index: 1
+	.text
+		margin-top: 86px
+		.description
+			color: $accent
+			font-size: 30px
+			line-height: 40px
+			letter-spacing: 0.6px
+			width: 570px
+			@include respond-to(ipad)
+				font-size: 28px
+				max-width: 100%
+		.title
+			margin-top: 15px
+			font-size: 55px
+			line-height: 60px
+			letter-spacing: 4.95px
+			@include respond-to(ipad)
+				font-size: 50px
+	.video-container
+		margin-top: 229px
+		z-index: 1
+		height: 461px
+		display: flex
+		align-items: center
+		justify-content: center
+		position: relative
+		@include respond-to(ipad)
+			margin-top: 39px
+			align-items: flex-start
+			height: 550px
+			padding-top: 37px
+		.play
+			height: 100px
+			width: 100px
+			position: relative
+		.face
+			position: absolute
+			right: 0
+			bottom: 0
+			@include respond-to(ipad)
+				max-width: 100%
+.why-you-need
+	font-family: 'Rotis Semi Serif W1G'
+	font-weight: 400
+	padding-top: 75px
+	.block-title
+		max-width: 570px
+	.info
+		display: flex
+		flex-direction: column
+		justify-content: center
+		@include respond-to(ipad)
+			margin-top: 30px
+		.text
+			font-size: 24px
+			line-height: 30px
+			letter-spacing: 0.48px
+			padding-bottom: 25px
+		.small
+			font-family: 'Open Sans', sans-serif
+			font-weight: 400
+			font-size: 17px
+			line-height: 24px
+		.title
+			font-weight: 600
+			font-size: 55px
+			line-height: 60px
+			letter-spacing: 4.95px
+			text-transform: uppercase
+			height: 120px
+			margin: 60px 0 50px
+			@include respond-to(ipad)
+				height: auto
+			& > div				
+				position: absolute
+				right: 0
+				width: 750px
+				@include respond-to(ipad)
+					max-width: 100%
+					font-size: 41px
+					position: relative
+	.yoga
+		float: right
+		margin-right: -99px
+		@include respond-to(ipad)
+			max-width: 100%
+			margin-right: 0
+
+.this-for-you
+	margin-top: 109px
+	.plants
+		float: right
+	.green-big
+		margin-top: 11px
+		font-size: 55px
+		line-height: 40px
+		letter-spacing: 1.1px
+		color: #78AD07
+		@include respond-to(ipad)
+			font-size: 40px
+			line-height: 40px
+	.info
+		padding-top: 100px
+		@include respond-to(ipad)
+			display: flex
+			flex-direction: column
+			justify-content: center
+			align-items: center
+			padding-bottom: 50px
+		.title
+			color: #78AD07
+			font-family: 'Rotis Semi Serif W1G'
+			font-size: 30px
+			line-height: 30px
+			letter-spacing: 0.6px
+			margin-top: 64px
+			@include respond-to(ipad)
+				text-align: center
+		.description
+			margin-top: 18px
+			font-size: 17px
+			line-height: 24px
+			width: 270px
+			@include respond-to(ipad)
+				text-align: center
+.in-programm
+	background-color: #F8F6F5
+	padding-top: 96px
+	display: flex
+	flex-direction: column
+	.block-title
+		margin-bottom: 76px
+	.col-md-4
+		display: flex
+		flex-direction: column
+		.description
+			padding: 60px 9px 79px
+			text-align: center
+			font-size: 17px
+			line-height: 24px
+	.info
+		width: 570px
+		max-width: 100%
+		font-size: 24px
+		font-family: 'Rotis Semi Serif W1G'
+		line-height: 30px
+		letter-spacing: 0.48px
+		text-align: center
+		margin: 5px auto
+	.button
+		border-color: #ffffff
+		margin: 26px auto 87px
+.for-whom
+	padding: 90px 0 123px
+	overflow: hidden
+	.block-title
+		margin-bottom: 85px
+	.circle
+		position: absolute
+		z-index: 1
+		left: calc((100% - 667px)/2)
+		top: 163px
+		@include respond-to(ipad)
+			top: 240px
+			z-index: 0
+	.i2,.t4
+		@include respond-to(ipad)
+			margin-top: 50px
+	.row:nth-child(1)
+		margin-bottom: 4px
+		@include respond-to(ipad)
+			padding: 90px 0
+	.row:nth-child(2) .col-md-3:nth-child(3n+1)
+		padding-top: 100px
+		@include respond-to(ipad)
+			padding-top: 0px
+			padding-bottom: 20px
+	.col-md-3
+		@include respond-to(ipad)
+			display: flex
+			flex-direction: column
+			align-items: center
+			justify-content: center
+	.col-md-3:nth-child(1)
+		text-align: right
+	.col-md-3:nth-child(2) img
+		float: right
+		margin-right: -4px
+	.col-md-3:nth-child(3) img
+		margin-left: -12px
+	.row .col-md-3 .text::before
+		@include respond-to(ipad)
+			height: 570px
+			content: ''
+			width: 100%
+	// .row:nth-child(1) .col-md-3:nth-child(1) .text
+	// 	&::before
+	// 	@include respond-to(ipad)
+	// 		float: right
+	// 		shape-outside: circle(50% at 92% 47%)
+	// .row:nth-child(1) .col-md-3:nth-child(4) .text::before
+	// 	@include respond-to(ipad)
+	// 		float: left
+	// 		shape-outside: circle(50% at 5% 44%)
+	// .row:nth-child(2) .col-md-3:nth-child(1) .text::before
+	// 	@include respond-to(ipad)
+	// 		float: right
+	// 		shape-outside: circle(48% at 92% 3%)
+	// .row:nth-child(2) .col-md-3:nth-child(4) .text::before
+	// 	@include respond-to(ipad)
+	// 		float: left
+	// 		shape-outside: circle(54% at 0 -4%)
+	.text
+		@include respond-to(ipad)
+			text-align: center
+			// width: 100%
+			// position: absolute
+			// z-index: 1
+	// .col-md-3:nth-child(4) .text
+	// 	@include respond-to(ipad)
+	// 		right: 0
+	// 		top: -270px
+	.col-md-3:nth-child(3)
+	.title
+		color: $accent
+		font-family: 'Rotis Semi Serif W1G'
+		font-size: 30px
+		line-height: 30px
+		letter-spacing: 0.6px
+		margin-bottom: 16px
+		@include respond-to(ipad)
+			padding-top: 29px
+	.description
+		font-size: 17px
+		line-height: 24px
+
+.conference-orginizer
+	padding-top: 80px
+	.face
+		float: right
+		@include respond-to(ipad)
+			max-width: 139%
+	.title		
+		font-family: 'Rotis Semi Serif W1G'
+		font-size: 55px
+		font-weight: 600
+		line-height: 60px
+		letter-spacing: 1.1px
+		text-transform: uppercase
+		padding-top: 43px
+	.description
+		font-family: 'Rotis Semi Serif W1G'
+		font-size: 24px
+		line-height: 30px
+		letter-spacing: 0.48px
+		color: #313131
+		margin-top: 25px
+	.list
+		font-size: 17px
+		line-height: 23px
+		padding: 0
+		margin-top: 25px
+		list-style: none
+		@include respond-to(phone)
+			width: calc(100% - 28px)
+			float: right
+		li
+			margin-top: 10px
+			position: relative
+			&::before
+				content: url("/img/svg/arrow_li.svg")
+				position: absolute
+				left: -23px
+.speakers
+	background-color: #F8F6F5
+	padding-top: 96px
+	.block-title
+		margin-bottom: 30px
+	&>.description
+		font-family: 'Rotis Semi Serif W1G'
+		font-size: 30px
+		line-height: 30px
+		letter-spacing: 0.6px
+		text-align: center
+		width: 770px
+		max-width: 100%
+		margin: 0 auto 100px
+	.col-md-4
+		text-align: center
+	.face
+		position: relative
+		cursor: pointer
+		img
+			max-width: 100%
+			border-radius: 50%
+		&::after
+			content: url(../img/svg/plus.svg)
+			width: 44px
+			height: 44px
+			background-color: $accent
+			position: absolute
+			padding-top: 6px
+			bottom: 6%
+			right: 12%
+			display: flex
+			justify-content: center
+			align-items: center
+			border-radius: 50%
+			box-shadow: 0px 0px 0px 10px rgba(255, 255, 255, 0.64)
+			transition: .3s
+		&:hover
+			&::after
+				box-shadow: 0px 0px 0px 14px rgba(255, 255, 255, 0.64)
+				background-color: #78AD07
+				transition: .3s
+			
+	.title
+		font-family: 'Rotis Semi Serif W1G'
+		font-size: 30px
+		line-height: 30px
+		letter-spacing: 0.6px
+		color: $accent
+		margin-top: 45px
+	.description
+		line-height: 20px
+		margin-top: 13px
+		padding: 0 11px
+	.info
+		color: #78AD07
+		font-size: 17px
+		font-weight: 600
+		line-height: 24px
+		margin-top: 15px
+		padding: 0 11px 75px
+.official-help
+	padding: 92px 0
+	font-family: 'Rotis Semi Serif W1G'
+	.doc
+		max-width: 335px
+		float: right
+		margin-right: 33px
+		@include respond-to(ipad)
+			float: none
+			margin: 0 auto
+			display: block
+	.title
+		font-size: 55px
+		font-weight: 600
+		line-height: 61px
+		letter-spacing: 1.1px
+		text-transform: uppercase
+		margin-top: 65px
+		@include respond-to(ipad)
+			font-size: 40px
+	.description
+		font-size: 20px
+		line-height: 25px
+		padding-right: 100px
+		margin-top: 36px
+	.logo
+		margin-top: 55px
+		@include respond-to(ipad)
+			max-width: 100%
+
+.speakers-invite
+	padding: 90px 0 95px
+	font-family: 'Rotis Semi Serif W1G'
+	.video
+		height: 205px
+		width: 100%
+		position: relative
+		display: flex
+		align-items: center
+		justify-content: center
+		.preview
+			position: absolute
+			height: 100%
+			width: 100%
+			object-fit: contain
+			z-index: 0
+		.play-button
+			z-index: 1
+	.title
+		font-size: 20px
+		line-height: 25px
+		text-align: center
+		margin-top: 32px
+		margin-bottom: 59px
+	.button
+		margin-top: 81px
+		border-color: #F8F6F5
+
+.form-block
+	padding: 110px 0 145px
+	.col-md-5
+		font-family: 'Rotis Semi Serif W1G'
+	.date
+		margin-top: 56px
+		font-size: 55px
+		font-weight: 600
+		line-height: 60px
+		text-transform: uppercase
+		@include respond-to(ipad)
+			font-size: 40px
+			line-height: 45px
+	.time
+		font-size: 43px
+		line-height: 20px
+		letter-spacing: 0.86px
+		padding-top: 18px
+		@include respond-to(ipad)
+			font-size: 28px
+			line-height: 5px
+	.get-chance
+		padding-top: 45px
+		font-weight: 600
+		text-transform: uppercase
+		.big
+			font-size: 55px
+			line-height: 55px
+			letter-spacing: 1.1px
+			@include respond-to(ipad)
+				font-size: 40px
+				line-height: 40px
+		.small
+			font-size: 41px
+			line-height: 55px
+			letter-spacing: 0.82px
+			@include respond-to(ipad)
+				font-size: 26px
+				line-height: 40px
+	.description
+		margin-top: 25px
+		font-size: 30px
+		line-height: 35px
+	.form-wrap
+		backdrop-filter: blur(37px)
+		padding: 38px 30px 38px
+		@include respond-to(ipad)
+			margin-top: 30px
+		.title
+			font-size: 35px
+			line-height: 38px
+			text-align: center
+		.description
+			font-family: 'Open Sans', sans-serif
+			font-size: 18px
+			line-height: 25px
+			text-align: center
+			margin-top: 6px
+		label
+			font-family: 'Open Sans', sans-serif
+			font-weight: 600
+			font-size: 16px
+			text-transform: uppercase
+			line-height: 22px
+			letter-spacing: 0.48px
+			width: 100%
+			margin-top: 34px
+		input:not(.button)
+			font-family: 'Open Sans', sans-serif
+			font-size: 16px
+			line-height: 22px
+			width: 100%
+			background-color: transparent
+			border-width: 0
+			border-bottom-width: 1px
+			border-color: #313131
+			padding: 4px 0 14px
+			&::placeholder
+				color: #A3A3A3
+				@include respond-to(phone)
+					color: #313131
+		.button
+			background-color: $accent
+			color: #fff
+			border: 10px solid #F8F6F5
+			width: calc(100% + 20px)
+			margin-right: -10px
+			margin-left: -10px
+			@include respond-to(phone)
+				margin-right: 0
+				margin-left: 0
+		.info
+			text-align: center
+			font-family: 'Open Sans', sans-serif
+			font-size: 15px
+			line-height: 23px
+			margin-top: 15px
+			padding: 0 6%
+footer
+	font-size: 14px
+	line-height: 25px
+	background-color: #F8F6F5
+	height: 200px
+	display: flex
+	align-items: center
+	@include respond-to(phone)
+		text-align: center
+	.col-md-4
+		text-align: right
+		@include respond-to(phone)
+			text-align: center
+
+	
+			
+
+
+@media ( max-width:  992px)
+	.first-screen
+		.info
+			.col-6:nth-child(even)
+				.item::after
+					content: none
+			.col-6:nth-child(-n+2)
+				.item::before
+					content: ""
+					position: absolute
+					bottom: 0
+					width: 64px
+					right: calc((100% - 64px) /2)
+					border-bottom: 1px dashed #c6c6c6
+
+	
+
+			
