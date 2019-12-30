@@ -342,6 +342,9 @@ a.button:hover {
 		left: 4px;
     	top: -8px;
 	}
+	.hero-block .big-title {
+		line-height: 55px;
+	}
 }
 
 /* END HERO BLOCK */
@@ -745,6 +748,10 @@ a.button:hover {
 		line-height: 29px;
 		padding-bottom: 0;
 		margin-bottom: 0;
+	}
+	.organizators-block .logo-wrap .text {
+		margin-left: 7px;
+		max-width: 225px;
 	}
 }
 
@@ -1150,7 +1157,7 @@ form {
 		text-align: center;
 		margin-top: 29px;
 	}
-	.big-title .t-blue {
+	.big-title:not(.same) .t-blue {
 		font-size: 34px;
 		line-height: 46px;
 		letter-spacing: 0.68px;
@@ -1180,6 +1187,9 @@ form {
 		width: 130%;
 		left: -15%;
 		margin-top: 29px;
+	}
+	#form .title-info {
+		font-size: 18px;
 	}
 }
 
