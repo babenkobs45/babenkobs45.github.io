@@ -307,6 +307,9 @@ a.button:hover {
 }
 
 @media (max-width: 768px) {
+	.hero-block .title-info {
+		margin-top: 25px;
+	}
 	.hero-block {
 		padding: 20px 0 100%;
 	}
@@ -316,6 +319,11 @@ a.button:hover {
 	}
 	.best {
 		justify-content: center;
+		font-size: 13px;
+		line-height: 18px;
+	}
+	.best .item {
+		margin-left: 64px;
 	}
 	.action {
 		justify-content: center;
@@ -773,7 +781,12 @@ a.button:hover {
 .speakers-block .photo {
 	position: relative;
 	cursor: pointer;
+	display: inline-block;
+}
+
+.speakers-block .photo-wrap {
 	margin-bottom: 40px;
+	position: relative;
 	display: inline-block;
 }
 
@@ -799,11 +812,38 @@ a.button:hover {
     transition: .3s;
 }
 
+.speakers-block .photo-wrap .video {
+	width: 44px;
+    height: 44px;
+	background-color: #E6BE00;
+	position: absolute;
+	padding-left: 3px;
+    bottom: 21%;
+    right: -1%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    box-shadow: 0px 0px 0px 10px rgba(255, 255, 255, 0.64);
+	transition: .3s;
+	cursor: pointer;
+}
+
+.speakers-block .photo-wrap .video:hover {
+	box-shadow: 0px 0px 0px 20px rgba(255, 255, 255, 0.64);
+    background-color: #EF230C;
+    transition: .3s;
+}
+
+.speakers-block .item.show .photo-wrap .video {
+	bottom: 28%;
+}
+
 .speakers-block .item.show .photo::after {
 	transform: rotate(45deg);
 }
 
-.speakers-block .photo img {
+.speakers-block .photo > img {
 	max-width: 100%;
 	border-radius: 50%;
 }
@@ -951,7 +991,7 @@ a.button:hover {
 		margin-bottom: 5px;
 	}
 
-	.speakers-block .photo {
+	.speakers-block .photo-wrap {
 		margin-bottom: 22px;
 	}
 
@@ -1096,6 +1136,10 @@ form {
 	width: 100%;
 }
 
+#form input::placeholder {
+	color: #202020;
+}
+
 #form form {
 	margin-top: 26px;
 }
@@ -1190,6 +1234,11 @@ form {
 	}
 	#form .title-info {
 		font-size: 18px;
+		font-weight: 400;
+	}
+	#form .big-title .t-blue {
+		font-size: 33px;
+    	letter-spacing: 0.68px;
 	}
 }
 
@@ -1329,12 +1378,20 @@ sup {
 	line-height: 1.2;
 }
 
+.why-block .info .sub-title .wrapper {
+	position: absolute;
+}
+
 .why-block .button {
 	margin-top: 42px;
 }
 
 .position-relative {
 	z-index: 1;
+}
+
+.why-block .wrapper-circle {
+	background-color: #4e4e4e;
 }
 
 @media (max-width: 998px) {

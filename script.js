@@ -1,7 +1,6 @@
 playButton = document.querySelectorAll(".play-button");
 for (i = 0; i < playButton.length; i++) {
 	playButton[i].onclick = function() {
-		console.log(this.dataset.videoUrl);
 		document.querySelector(".modale").classList.add("show");
 		new YT.Player('video', {
 			videoId: this.dataset.videoUrl,
@@ -31,7 +30,7 @@ var speakersInfo = document.querySelectorAll(".speakers-block .item .photo");
 for (i = 0; i < speakersInfo.length; i++) {
 	speakersInfo[i].onclick = function(){
 		console.log("plus");
-		this.parentNode.parentNode.classList.toggle("show");
+		this.parentNode.parentNode.parentNode.classList.toggle("show");
 		document.querySelector(".speakers-block .item.show .closed").onclick = function(){
 			document.querySelector(".speakers-block .item.show").classList.toggle("show");
 		}
@@ -56,7 +55,7 @@ function setProgramm (program, numberP) {
 	var pagination = "<span class='sub-title'><span class='t-blue'>" + ((numberP > 9) ? numberP : "0" + numberP) + "</span><sup>/" + ((programs.length > 9) ? programs.length : "0" + programs.length) + "</sup></span>";
 	var images = document.querySelectorAll(".why-block .wrapper-circle img");
 
-	document.querySelector(".why-block .info > .sub-title").innerHTML = program.querySelector(".title").innerHTML;
+	document.querySelector(".why-block .info > .sub-title > .wrapper").innerHTML = program.querySelector(".title").innerHTML;
 	if (document.querySelector(".why-block .wrapper-circle .show")) {
 		document.querySelector(".why-block .wrapper-circle .show").classList.remove("show");
 	}

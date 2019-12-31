@@ -28,7 +28,7 @@
 							<div class="sub-title">11-22 МАРТА 2020</div>
 							<div class="title-info-2">с 19:00 - 22:00 Мск Online</div>
 						</div>
-						<div class="title-info">Международная<br>онлайн-конференция для сетевиков</div>
+						<div class="title-info">Международная <br class="d-none d-lg-block">онлайн-<br class="d-block d-lg-none">конференция для сетевиков</div>
 						<div class="big-title same">
 							академия<br>эффективного<br>
 							<div class="t-blue">рекрутинга</div>
@@ -126,7 +126,7 @@
 						</div>
 						<div class="info">
 							<div class="pagination"></div>
-							<div class="sub-title">Социальные сети и SMM продвижение для МЛМ. Мифы и реальность</div>
+							<div class="sub-title"><div class="wrapper">Социальные сети и SMM продвижение для МЛМ. Мифы и реальность</div></div>
 						</div>
 					</div>
 				</div>
@@ -363,7 +363,18 @@
 				</div>
 				<div class="col-lg-4 text-center item">
 					<div class="wrapper">
-						<div class="photo"><img src="img/tatarinov-circle.jpg" alt=""></div>
+						<div class="photo-wrap">
+							<div class="photo">
+								<img src="img/tatarinov-circle.jpg" alt="">
+							</div>
+							<!-- 
+								В data-video-url нужно вставить id видео.
+								Например из этого видео https://www.youtube.com/watch?v=rZrlWgYuHQQ id это rZrlWgYuHQQ
+							-->					
+							<div class="video play-button" data-video-url="rZrlWgYuHQQ">
+								<img src="img/play-mini.svg" alt="">
+							</div>
+						</div>
 						<div class="sub-title">Всеволод Татаринов</div>
 						<div class="text">Легендарный российский бизнес-тренер, за плечами которого более 25 лет бизнес-практики.</div>
 						<div class="description">
@@ -425,8 +436,10 @@
 						
 				</div>
 				<div class="col-lg-4 text-center item">
-					<div class="wrapper">
-						<div class="photo"><img src="img/ekaterina.jpg" alt=""></div>
+					<div class="wrapper">						
+						<div class="photo-wrap">
+							<div class="photo"><img src="img/ekaterina.jpg" alt=""></div>
+						</div>
 						<div class="sub-title">Екатерина Терехова</div>
 						<div class="text">7 лет в предпринимательстве, бизнес-практик.</div>
 						<div class="description">
@@ -452,7 +465,9 @@
 				</div>
 				<div class="col-lg-4 text-center item">
 					<div class="wrapper">
-						<div class="photo"><img src="img/kostya.jpg" alt=""></div>
+						<div class="photo-wrap">
+							<div class="photo"><img src="img/kostya.jpg" alt=""></div>
+						</div>
 						<div class="sub-title">Константин Романов</div>
 						<div class="text">Топ лидер бонусной программы.</div>
 						<div class="description">
@@ -540,9 +555,8 @@
 									<div class="form text-center">
 										<div class="title-info"><div class="t-blue">Регистрируйтесь сейчас, </div>эта конференция именно для Вас</div>
 										<form action="https://email.vsevolodtatarinov.ru/add_subscriber.html" accept-charset="utf-8" method="post">
-											<input type="text" placeholder="Ваше имя">
 											<input type="text" name="email" placeholder="Введите Ваш email*" required>
-											<input name="custom_telefon" type="text" placeholder="Введите Ваш телефон" />
+											<input name="custom_telefon" type="text" placeholder="Введите Ваш телефон*" />
 											<!-- Токен списка -->
 											<!-- Получить API ID на: https://email.vsevolodtatarinov.ru/campaign_list.html -->
 											<input type="hidden" name="campaign_token" value="LZwqV" />
