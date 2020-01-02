@@ -87,9 +87,8 @@ document.querySelector(".arrow.prev").onclick = function(){
 	setProgramm(programs[programNumber], programNumber);
 }
 
-new Rellax('.rellax',{round: true});
-
 var rellax3 = document.querySelectorAll(".for-whom-block .rellax3");
+var rellax = document.querySelectorAll(".hero-block .rellax");
 var offsetTop = document.querySelector(".for-whom-block ").offsetTop;
 var scrollHeight = Math.max(
 	document.body.scrollHeight, document.documentElement.scrollHeight,
@@ -100,14 +99,18 @@ var scrollHeight = Math.max(
   console.log(scrollHeight);
 
 
+var number;
 
 window.addEventListener('scroll', function() {
+	// for-whom-block
 	if (pageYOffset > offsetTop) {
-		if (1600 > pageYOffset - offsetTop){
-			console.log("2: " + (pageYOffset - offsetTop) * 3);
+		if (2000 > pageYOffset - offsetTop){
+			console.log("2: " + (pageYOffset - offsetTop));
 			for (i=0; i < rellax3.length; i++) {
-				rellax3[i].style.transform = 
-				"translateY(" + ((pageYOffset - offsetTop) * rellax3[i].dataset.parallax) + "px)";
+				number = ((pageYOffset - offsetTop) * rellax3[i].dataset.parallax);
+				if ( number < 3000 ) {
+					rellax3[i].style.transform = "translateY(" + number + "px)";
+				}
 			}
 		}
 		
@@ -115,6 +118,23 @@ window.addEventListener('scroll', function() {
 		console.log("less");
 		for (i=0; i < rellax3.length; i++) {
 			rellax3[i].style.transform = "translateY(0px)";
+		}
+	}
+	// hero-block
+	if (pageYOffset > 1) {
+		if (2000 > pageYOffset){
+			for (i=0; i < rellax.length; i++) {
+				number = (pageYOffset * rellax[i].dataset.parallax);
+				if ( number < 3000 ) {
+					console.log("number: " + number);
+					rellax[i].style.transform = "translateY(" + number + "px)";
+				}
+			}
+		}
+		
+	} else {
+		for (i=0; i < rellax.length; i++) {
+			rellax[i].style.transform = "translateY(0px)";
 		}
 	}
 });
