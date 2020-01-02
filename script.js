@@ -86,3 +86,35 @@ document.querySelector(".arrow.prev").onclick = function(){
 	}
 	setProgramm(programs[programNumber], programNumber);
 }
+
+new Rellax('.rellax',{round: true});
+
+var rellax3 = document.querySelectorAll(".for-whom-block .rellax3");
+var offsetTop = document.querySelector(".for-whom-block ").offsetTop;
+var scrollHeight = Math.max(
+	document.body.scrollHeight, document.documentElement.scrollHeight,
+	document.body.offsetHeight, document.documentElement.offsetHeight,
+	document.body.clientHeight, document.documentElement.clientHeight
+  );
+
+  console.log(scrollHeight);
+
+
+
+window.addEventListener('scroll', function() {
+	if (pageYOffset > offsetTop) {
+		if (1600 > pageYOffset - offsetTop){
+			console.log("2: " + (pageYOffset - offsetTop) * 3);
+			for (i=0; i < rellax3.length; i++) {
+				rellax3[i].style.transform = 
+				"translateY(" + ((pageYOffset - offsetTop) * rellax3[i].dataset.parallax) + "px)";
+			}
+		}
+		
+	} else if(offsetTop - this.pageYOffset < 300) {
+		console.log("less");
+		for (i=0; i < rellax3.length; i++) {
+			rellax3[i].style.transform = "translateY(0px)";
+		}
+	}
+});

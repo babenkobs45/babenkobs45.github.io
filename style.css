@@ -152,6 +152,14 @@ a.button:hover {
 	transition: 0.3s;
 }
 
+.z-2 {
+	z-index: 2;
+}
+
+.z-3 {
+	z-index: 3;
+}
+
 @media (max-width: 1200px) {
 	.title {
 		font-size: 45px;
@@ -231,6 +239,10 @@ a.button:hover {
 	color: #05A3DD;
 }
 
+.pt100 {
+	padding-top: 100px;
+}
+
 .hero-block {
 	padding: 40px calc((100vw - 1140px) / 5) 68px;
 	background-color: #dfebf7;
@@ -307,6 +319,9 @@ a.button:hover {
 }
 
 @media (max-width: 768px) {
+	.pt100 {
+		padding-top: 50px;
+	}
 	.hero-block .title-info {
 		margin-top: 25px;
 	}
@@ -323,7 +338,12 @@ a.button:hover {
 		line-height: 18px;
 	}
 	.best .item {
-		margin-left: 64px;
+		margin-left: 0 !important;
+		padding-left: 50px;
+		box-sizing: content-box;
+	}
+	.best .item::before {
+		left: 9%;
 	}
 	.action {
 		justify-content: center;
@@ -351,7 +371,7 @@ a.button:hover {
     	top: -8px;
 	}
 	.hero-block .big-title {
-		line-height: 55px;
+		line-height: 52px;
 	}
 }
 
@@ -499,7 +519,7 @@ a.button:hover {
 }
 
 .three-reasons-block {
-	padding: 100px 0 120px;
+	padding-bottom: 120px;
 }
 
 .three-reasons-block::before {
@@ -610,11 +630,7 @@ a.button:hover {
 /* END THREE REASONS BLOCK */
 
 .for-whom-block {
-	padding: 90px 0 110px; 
-    background-image: url(img/bg-icon.png);
-    background-repeat: no-repeat;
-    background-position: 96% 58%;
-    background-size: 90px;
+	padding: 90px 0 110px;
 }
 
 .mixed-title .sub-title {
@@ -650,12 +666,6 @@ a.button:hover {
 	margin-top: 30px;
 }
 
-@media (max-width: 1410px) {
-	.for-whom-block {
-		background-position: 96% 80%;
-	}
-}
-
 @media (max-width: 1200px) {
 	.mixed-title .sub-title {
 		padding-bottom: 0;
@@ -665,8 +675,7 @@ a.button:hover {
 
 @media (max-width: 768px) {
 	.for-whom-block {
-		padding: 49px 0 94px;
-		background-image: none;
+		padding: 49px 0 50px;
 	}
 	.for-whom-block *:not(.info) > .title {
 		line-height: 53px;
@@ -678,27 +687,21 @@ a.button:hover {
 		line-height: 37px;
 		padding-bottom: 0;
 	}
+	.for-whom-block .button {
+		margin-top: 0;
+	}
 }
 /* END FOR WHOM BLOCK */
-
-.organizators-block {
-	padding-top: 90px;
-}
-
-.organizators-block::before {
-	content: url(img/bg-icon.png);
-    position: absolute;
-    top: -86px;
-    right: 6%;
-    width: 205px;
-    z-index: 1;
-}
 
 .organizators-block .title,
 .organizators-block .sub-title {
 	text-transform: uppercase;
 	position: relative;
 	z-index: 2;
+}
+
+.organizators-block .bg {
+	z-index: -1;
 }
 
 .organizators-block .description {
@@ -728,13 +731,6 @@ a.button:hover {
 	line-height: 18px;
 	margin-left: 18px;
 	margin-top: -3px;
-}
-
-@media (max-width: 1680px) {
-	.organizators-block::before {
-		width: 115px;
-		top: -150px;
-	}
 }
 
 @media (max-width: 1200px) {
@@ -767,6 +763,7 @@ a.button:hover {
 
 .speakers-block {
 	padding: 90px 0 114px;
+	background-color: #fff;
 }
 
 .speakers-block .mixed-title .sub-title {
@@ -993,6 +990,17 @@ a.button:hover {
 
 	.speakers-block .photo-wrap {
 		margin-bottom: 22px;
+		max-width: 250px;
+	}
+
+	.speakers-block .photo-wrap .video,
+	.speakers-block .item.show .photo-wrap .video {
+		bottom: 29%;
+    	right: -7%;
+	}
+
+	.speakers-block .photo::after {
+		right: 8%;
 	}
 
 	.speakers-block .item .sub-title {
@@ -1004,6 +1012,9 @@ a.button:hover {
 	}
 	.closed {
 		display: none;
+	}
+	.speakers-block .button {
+		margin-top: 30px;
 	}
 }
 /* END SPEAKERS BLOCK */
@@ -1055,6 +1066,9 @@ a.button:hover {
 @media (max-width: 768px) {
 	.official-document .doc {
 		margin-left: -90px;
+	}
+	.official-document .info{
+		margin-top: 50px;
 	}
 }
 /* END OFFICIAL DOCUMENT BLOCK */
@@ -1152,6 +1166,7 @@ form {
 
 .mxw600 {
 	max-width: 600px;
+	width: 100%;
 }
 
 @media (max-width: 1400px) {
@@ -1170,6 +1185,9 @@ form {
 }
 
 @media (max-width: 1200px) {
+	#form {
+		padding: 200px 0 500px;
+	}
 	#form .bg img {
 		object-position: 0 50%;
 	}
@@ -1190,9 +1208,15 @@ form {
 	}
 }
 
+@media (max-width: 992px) and (min-width: 768px) {
+	#form .mxw600 {
+		margin-top: 50px;
+	}
+}
+
 @media (max-width: 768px) {
 	#form {
-		padding: 135px 0 585px;
+		padding: 135px 0 100%;
 	}
 	.big-title {
 		font-size: 45px;
@@ -1235,10 +1259,16 @@ form {
 	#form .title-info {
 		font-size: 18px;
 		font-weight: 400;
+		line-height: 23px;
 	}
 	#form .big-title .t-blue {
 		font-size: 33px;
     	letter-spacing: 0.68px;
+	}
+	#form .bg img {
+		object-position: 0 100%;
+		background-color: #edf6fd;
+		object-fit: contain;
 	}
 }
 
@@ -1257,7 +1287,8 @@ footer {
 }
 
 .why-block {
-	padding: 100px 0 120px;
+	padding-bottom: 120px;
+	background-color: #fff;
 }
 
 .why-block .title-info {
@@ -1290,6 +1321,7 @@ footer {
 	border-radius: 50%;
 	margin-bottom: 10px;
 	cursor: pointer;
+	transition: 0.3s;
 }
 
 .arrow::before {
@@ -1348,6 +1380,11 @@ footer {
     width: 50%;
 }
 
+.why-block .info-wrap > .info {
+	flex-grow: 1;
+	position: relative;
+}
+
 .wrapper-circle > img {
 	width: 100%;
 	height: 100%;
@@ -1380,6 +1417,7 @@ sup {
 
 .why-block .info .sub-title .wrapper {
 	position: absolute;
+	max-width: 100%;
 }
 
 .why-block .button {
@@ -1414,4 +1452,11 @@ sup {
 	.pagination {
 		margin-bottom: 10px;
 	}
+	.why-block .text {
+		font-size: 15px;
+	}
+}
+
+.rellax3 {
+	transition: 0.1s;
 }
